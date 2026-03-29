@@ -1,0 +1,126 @@
+@import 'tailwindcss';
+@plugin "@iconify/tailwind4";
+
+/* Tailwind Theme Definitions */
+/* Colors from app.config.ts - Tailwind v4 @theme with CSS variable references */
+/* Default values are set here, but will be overridden by theme system CSS variables */
+/* Defaults align with BitXero (https://bitxero-iq.com/) dark theme before runtime theme injection */
+@theme {
+  --color-primary: #26f184;
+  --color-secondary: #efc818;
+  --color-accent: #efc818;
+  --color-background: #0d0d0d;
+  --color-surface: #1a1a1a;
+  --color-text: #e5e5e5;
+  --color-text-secondary: #a3a3a3;
+  --color-border: #2a2a2a;
+  --color-muted: #141414;
+  --color-link: #26f184;
+  --color-link-hover: #5af0a8;
+  --color-emphasis: #26f184;
+  --color-success: #26f184;
+  --color-warning: #efc818;
+  --color-error: #f87171;
+  --color-info: #26f184;
+
+  /* Font variables */
+  --font-primary: var(--font-primary);
+  --font-secondary: var(--font-secondary);
+  --font-mono: var(--font-mono);
+}
+
+/* Font Family Registration */
+/* Use this section to register local fonts */
+/* Example:
+@font-face {
+  font-family: 'CustomFont';
+  src: url('/fonts/custom-font.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-custom: 'CustomFont', sans-serif;
+}
+*/
+
+/* Default font families - overridden at runtime from app.config.ts */
+:root {
+  --font-sans: 'CODEINK', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'MonaspaceArgonVar', ui-monospace, monospace;
+  --font-mono: 'MonaspaceArgonVar', ui-monospace, monospace;
+}
+
+/* Theme CSS variables will be injected automatically by the config system */
+/* Colors are available as CSS variables: --color-primary, --color-secondary, etc. */
+/* Use them in your components like: color: var(--color-primary); */
+
+/* Base theme-aware styles */
+:root {
+  color-scheme: light dark;
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+[data-theme='light'] {
+  color-scheme: light;
+}
+
+/* Smooth theme transitions */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+body {
+  font-family: var(--font-primary);
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+}
+
+/* Custom scrollbar - theme-aware, slim & smooth */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 9999px;
+  border: 0.125rem solid transparent;
+  background-clip: padding-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+  background-clip: padding-box;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background: var(--color-secondary);
+  background-clip: padding-box;
+}
+
+*::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+button {
+  cursor: pointer;
+}
