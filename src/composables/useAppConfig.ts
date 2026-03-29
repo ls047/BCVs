@@ -16,6 +16,7 @@ export const useAppConfig = () => {
   const appTitle = computed(() => appConfig.app.title);
   const appDescription = computed(() => appConfig.app.description);
   const appUrl = computed(() => appConfig.app.url);
+  const cvSiteUrl = computed(() => appConfig.app.cvSiteUrl);
 
   const primaryFont = computed(() => appConfig.typography.primary.family);
   const secondaryFont = computed(() => appConfig.typography.secondary?.family);
@@ -35,6 +36,7 @@ export const useAppConfig = () => {
     appTitle,
     appDescription,
     appUrl,
+    cvSiteUrl,
     primaryFont,
     secondaryFont,
     monoFont,

@@ -8,6 +8,7 @@ export const appConfig: AppConfig = {
     version: '1.0.0',
     author: 'Your Name',
     url: 'https://bitxero-iq.com',
+    cvSiteUrl: 'https://cv.bitxero-iq.com',
     language: 'en',
   },
 

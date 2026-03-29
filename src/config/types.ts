@@ -79,6 +79,8 @@ export interface AppMetadata {
   version?: string;
   author?: string;
   url?: string;
+  /** Public origin for member CV links (QR, share). Falls back to `url` then current origin. */
+  cvSiteUrl?: string;
   language?: string;
 }
 
