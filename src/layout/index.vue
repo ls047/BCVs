@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-col min-h-screen bg-background">
+  <div class="flex min-h-screen min-h-[100dvh] flex-col bg-background">
     <AppHeader />
-    <main class="flex-1">
+    <main class="min-w-0 flex-1 pb-[env(safe-area-inset-bottom,0px)]">
       <slot />
     </main>
   </div>

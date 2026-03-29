@@ -1,12 +1,17 @@
 <template>
-  <header class="border-border bg-surface/95 sticky top-0 z-50 border-b backdrop-blur-sm">
-    <div class="container mx-auto px-4 py-4">
-      <div class="flex flex-row items-center justify-between">
-        <RouterLink to="/" class="flex flex-row items-center gap-3 text-xl hover:opacity-90">
-          <AppIcon name="icon-[heroicons-outline--user-group]" :size="2" class="text-primary" />
-          <span class="text-text font-bold">{{ appName }}</span>
+  <header
+    class="border-border bg-surface/95 sticky top-0 z-50 border-b pt-[env(safe-area-inset-top,0px)] backdrop-blur-sm"
+  >
+    <div class="container mx-auto px-4 py-3 sm:py-4">
+      <div class="flex flex-row items-center justify-between gap-2">
+        <RouterLink
+          to="/"
+          class="hover:opacity-90 flex min-w-0 flex-1 flex-row items-center gap-2 text-base sm:flex-initial sm:gap-3 sm:text-xl"
+        >
+          <AppIcon name="icon-[heroicons-outline--user-group]" :size="2" class="text-primary shrink-0" />
+          <span class="text-text truncate font-bold">{{ appName }}</span>
         </RouterLink>
-        <div class="flex items-center gap-3">
+        <div class="flex shrink-0 items-center gap-2 sm:gap-3">
           <!-- Theme Toggle -->
           <div class="relative">
             <button
