@@ -46,11 +46,13 @@
         </div>
       </div>
 
-      <div class="border-border bg-surface overflow-hidden rounded-lg border shadow-sm sm:rounded-xl">
+      <div
+        class="border-border bg-surface overflow-hidden rounded-lg border shadow-sm sm:rounded-xl"
+      >
         <iframe
           :title="`${member.name} CV`"
           :src="pdfHref"
-          class="h-[min(72dvh,900px)] w-full min-w-0 border-0 sm:h-[min(85vh,900px)]"
+          class="h-[min(72dvh,34rem)] w-full min-w-0 border-0 sm:h-[min(70dvh,38rem)] md:h-[min(72dvh,40rem)] lg:h-[min(85vh,56.25rem)]"
         />
       </div>
     </div>
